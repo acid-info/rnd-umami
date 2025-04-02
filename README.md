@@ -1,10 +1,14 @@
 # Umami Research
 
-Please change the postgres credentials as you want.
+This project sets up the [Umami](https://umami.is/) analytics platform with a PostgreSQL database.
 
-## Option 1: docker-compose
+> **Note**: Change the default PostgreSQL credentials if you're using this in production.
 
-1. Check `docker-compose.yaml`
+---
+
+## Option 1: Using `docker-compose`
+
+1. Review the `docker-compose.yaml`.
 
 ```yaml
 version: "3.8"
@@ -40,13 +44,24 @@ volumes:
   umami-db-data:
 ```
 
-2. Run `docker-compose up --build -d`
+2. Start the containers:
 
-3. Visit `http://localhost:3000/login` and use `admin` for username and `umami` for password
+```bash
+docker-compose up --build -d
+```
 
-## Option 2 : docker
+3. Access the dashboard:
 
-1. Run Postgres
+Open [http://localhost:3000/login](http://localhost:3000/login) in your browser.
+
+- **Username**: `admin`
+- **Password**: `umami`
+
+---
+
+## Option 2: Using individual Docker commands
+
+1. Run PostgreSQL:
 
 ```bash
 docker run -d \
@@ -55,10 +70,10 @@ docker run -d \
   -e POSTGRES_USER=umami \
   -e POSTGRES_PASSWORD=umami \
   -p 5432:5432 \
-  postgres
+  postgres:15
 ```
 
-2. Run Umamy
+2. Run Umami:
 
 ```bash
 docker run -d \
@@ -69,4 +84,9 @@ docker run -d \
   docker.umami.is/umami-software/umami:postgresql-latest
 ```
 
-3. Visit `http://localhost:3000/login` and use `admin` for username and `umami` for password
+3. Login to the dashboard:
+
+Visit [http://localhost:3000/login](http://localhost:3000/login)
+
+- **Username**: `admin`
+- **Password**: `umami`
