@@ -1,12 +1,48 @@
 # Umami Research
 
-This project sets up the [Umami](https://umami.is/) analytics platform with a PostgreSQL database.
+This project sets up the [Umami](https://umami.is/) analytics platform with a PostgreSQL database. As well as a docusaurus Logos.co website with Umami integration through the docusaurus umami plugin located in `packages/docusaurus-plugin-umami`.
 
 > **Note**: Change the default PostgreSQL credentials if you're using this in production.
 
----
+## Setup the project
 
-## Option 1: Using `docker-compose`
+```bash
+# Install dependencies
+yarn setup
+
+# Link the docusaurus umami plugin to the Logos.co site
+yarn link:plugin
+```
+
+## Running Logos.co
+
+```bash
+# Start Logos.co
+yarn logos:start
+```
+
+## Running Umami
+
+1. Start Umami services
+
+```bash
+# Start Umami services
+yarn umami:up
+
+# Stop Umami services
+yarn umami:down
+```
+
+2. Login to the dashboard:
+
+Visit [http://localhost:3000/login](http://localhost:3000/login)
+
+- **Username**: `admin`
+- **Password**: `umami`
+
+## Running Umami manually
+
+### Option 1: Using `docker-compose`
 
 1. Review the `docker-compose.yaml`.
 
@@ -59,7 +95,7 @@ Open [http://localhost:3000/login](http://localhost:3000/login) in your browser.
 
 ---
 
-## Option 2: Using individual Docker commands
+### Option 2: Using individual Docker commands
 
 1. Run PostgreSQL:
 
