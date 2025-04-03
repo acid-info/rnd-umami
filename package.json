@@ -1,0 +1,19 @@
+{
+  "name": "rnd-umami",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "setup": "yarn install && cd packages/docusaurus-plugin-umami && yarn install && cd ../../apps/logos.co && yarn install",
+    "link:plugin": "cd apps/logos.co && mkdir -p node_modules && ln -sf ../../packages/docusaurus-plugin-umami node_modules/docusaurus-plugin-umami",
+    "umami:up": "cd docker/umami && docker-compose up -d",
+    "umami:down": "cd docker/umami && docker-compose down",
+    "logos:start": "cd apps/logos.co && yarn start"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0"
+  }
+}
