@@ -4,6 +4,13 @@ This project sets up the [Umami](https://umami.is/) analytics platform with a Po
 
 > **Note**: Change the default PostgreSQL credentials if you're using this in production.
 
+## Instructions
+
+1. [Run umami](#running-umami)
+2. [Setup tracking scripts](#setting-up-umami-tracking-scripts)
+3. [Run Next.js Test App](#running-nextjs-test-app)
+4. [Run Logos.co](#running-logosco)
+
 ## Setup the project
 
 ```bash
@@ -30,6 +37,8 @@ yarn logos:start
 
 ## Running Umami
 
+### Preconfigured
+
 1. Start Umami services
 
 ```bash
@@ -47,9 +56,9 @@ Visit [http://localhost:3000/login](http://localhost:3000/login)
 - **Username**: `admin`
 - **Password**: `umami`
 
-## Running Umami manually
+### Manually
 
-### Option 1: Using `docker-compose`
+#### Option 1: Using `docker-compose`
 
 1. Review the `docker-compose.yaml`.
 
@@ -102,7 +111,7 @@ Open [http://localhost:3000/login](http://localhost:3000/login) in your browser.
 
 ---
 
-### Option 2: Using individual Docker commands
+#### Option 2: Using individual Docker commands
 
 1. Run PostgreSQL:
 
@@ -133,3 +142,11 @@ Visit [http://localhost:3000/login](http://localhost:3000/login)
 
 - **Username**: `admin`
 - **Password**: `umami`
+
+## Setting up Umami tracking scripts
+
+1. Open umami dashboard
+2. Go to `Settings` > `Add website`
+3. Fill in the form
+4. Add the tracking info in `apps/next-test/src/app/layout.tsx` (line 30) for the next-test app
+5. Repeat 1-3 for the logos.co app and add the tracking info in `apps/logos.co/docusaurus.config.js` (line 56)
