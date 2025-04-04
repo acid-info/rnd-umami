@@ -1,6 +1,6 @@
 # Umami Research
 
-This project sets up the [Umami](https://umami.is/) analytics platform with a PostgreSQL database. As well as a docusaurus Logos.co website with Umami integration through the docusaurus umami plugin located in `packages/docusaurus-plugin-umami`.
+This project sets up the [Umami](https://umami.is/) analytics platform with a PostgreSQL database. As well as a docusaurus Logos.co website with Umami integration through the docusaurus umami plugin located in `packages/docusaurus-plugin-umami`. Also includes a Next.js test app with Umami integration.
 
 > **Note**: Change the default PostgreSQL credentials if you're using this in production.
 
