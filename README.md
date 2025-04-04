@@ -6,10 +6,11 @@ This project sets up the [Umami](https://umami.is/) analytics platform with a Po
 
 ## Instructions
 
-1. [Run umami](#running-umami)
-2. [Setup tracking scripts](#setting-up-umami-tracking-scripts)
-3. [Run Next.js Test App](#running-nextjs-test-app)
-4. [Run Logos.co](#running-logosco)
+1. [Setup the project](#setup-the-project)
+2. [Run umami](#running-umami)
+3. [Setup tracking scripts](#setting-up-umami-tracking-scripts)
+4. [Run Next.js Test App](#running-nextjs-test-app)
+5. [Run Logos.co](#running-logosco)
 
 ## Setup the project
 
@@ -19,20 +20,6 @@ yarn setup
 
 # Link the docusaurus umami plugin to the Logos.co site
 yarn link:plugin
-```
-
-## Running Next.js Test App
-
-```bash
-# Start Next.js Test App
-yarn next-test:start
-```
-
-## Running Logos.co
-
-```bash
-# Start Logos.co
-yarn logos:start
 ```
 
 ## Running Umami
@@ -150,3 +137,17 @@ Visit [http://localhost:3000/login](http://localhost:3000/login)
 3. Fill in the form
 4. Add the tracking info in `apps/next-test/src/app/layout.tsx` (line 30) for the next-test app
 5. Repeat 1-3 for the logos.co app and add the tracking info in `apps/logos.co/docusaurus.config.js` (line 56)
+
+## Running Next.js Test App
+
+```bash
+# Start Next.js Test App
+yarn next-test:start
+```
+
+## Running Logos.co
+
+```bash
+# Start Logos.co
+yarn logos:start
+```
