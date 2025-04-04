@@ -14,6 +14,13 @@ yarn setup
 yarn link:plugin
 ```
 
+## Running Next.js Test App
+
+```bash
+# Start Next.js Test App
+yarn next-test:start
+```
+
 ## Running Logos.co
 
 ```bash

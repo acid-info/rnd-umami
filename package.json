@@ -6,11 +6,12 @@
     "apps/*"
   ],
   "scripts": {
-    "setup": "yarn install && cd packages/docusaurus-plugin-umami && yarn install && cd ../../apps/logos.co && yarn install",
+    "setup": "yarn install && cd packages/docusaurus-plugin-umami && yarn && cd ../../apps/logos.co && yarn && cd ../next-test && yarn",
     "link:plugin": "cd apps/logos.co && mkdir -p node_modules && ln -sf ../../packages/docusaurus-plugin-umami node_modules/docusaurus-plugin-umami",
     "umami:up": "cd docker/umami && docker-compose up -d",
     "umami:down": "cd docker/umami && docker-compose down",
-    "logos:start": "cd apps/logos.co && yarn start"
+    "logos:start": "cd apps/logos.co && yarn start",
+    "next-test:start": "cd apps/next-test && yarn build && yarn start"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
